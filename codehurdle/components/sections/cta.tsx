@@ -23,13 +23,6 @@ export function CTA() {
       <div className="max-w-5xl mx-auto px-4">
         
         <div className="rounded-3xl border border-border bg-surface p-8 sm:p-14 text-center space-y-8 relative overflow-hidden">
-          
-          {/* Subtle Accent Glow Header */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7B2DFF]/30 bg-[#7B2DFF]/10 text-xs font-mono text-[#A675FF]">
-            <Sparkles className="w-3.5 h-3.5 text-[#7B2DFF]" />
-            <span>START PREPARING TODAY</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-2xl mx-auto leading-tight">
             Ready to Master DSA & Land Your Next Offer?
           </h2>

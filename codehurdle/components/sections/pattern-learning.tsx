@@ -157,10 +157,6 @@ export function PatternLearning() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <Badge variant="purple" className="px-3 py-1 text-xs">
-            PATTERN-BASED CURRICULUM
-          </Badge>
-          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl">
             Master 14 Algorithmic Patterns.
           </h2>
