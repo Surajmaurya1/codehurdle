@@ -61,7 +61,7 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "pointer-events-auto rounded-2xl px-4 py-2.5 flex items-center justify-between transition-all duration-300 backdrop-blur-xl",
+            "pointer-events-auto rounded-2xl px-4 py-2.5 flex items-center justify-between transition-all duration-300 backdrop-blur-2xl",
             isScrolled
               ? "bg-background/80 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]"
               : "bg-background/40 border border-white/5 shadow-sm"
@@ -115,7 +115,7 @@ export function Navbar() {
                 "hidden sm:inline-flex gap-1.5 font-semibold text-xs shadow-md"
               )}
             >
-              <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
+              {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
               <span>Start Practicing</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
