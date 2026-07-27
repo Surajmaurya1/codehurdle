@@ -13,43 +13,15 @@ import { NAV_LINKS } from "@/constants/navigation";
 export function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("overview");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [navVisible, setNavVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const lastScrollY = useRef(0);
-  const ticking = useRef(false);
 
-  // Smooth, jitter-free scroll hide/show — uses rAF + hysteresis
+  // Smooth scroll listener for backdrop elevation on scroll
   useEffect(() => {
-    const HIDE_THRESHOLD = 80;    // px before we start hiding
-    const SHOW_DELTA = 10;        // scroll up by this many px to show
-    const HIDE_DELTA = 14;        // scroll down by this many px to hide
-
     const onScroll = () => {
-      if (ticking.current) return;
-      ticking.current = true;
-      requestAnimationFrame(() => {
-        const currentY = window.scrollY;
-        const diff = currentY - lastScrollY.current;
-
-        setIsScrolled(currentY > 20);
-
-        if (currentY < HIDE_THRESHOLD) {
-          // Always visible at top
-          setNavVisible(true);
-        } else if (diff > HIDE_DELTA) {
-          // Scrolling down fast enough — hide
-          setNavVisible(false);
-          setMobileMenuOpen(false);
-        } else if (diff < -SHOW_DELTA) {
-          // Scrolling up fast enough — show
-          setNavVisible(true);
-        }
-
-        lastScrollY.current = currentY;
-        ticking.current = false;
-      });
+      setIsScrolled(window.scrollY > 20);
     };
 
+    onScroll(); // initial check
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -83,21 +55,16 @@ export function Navbar() {
 
   return (
     <>
-      {/* Floating Glass Header — CSS transition for buttery-smooth hide/show */}
+      {/* Floating Modern Premium Glass Header — Always Sticky/Fixed on Top */}
       <header
-        className={cn(
-          "fixed top-4 left-0 right-0 z-40 mx-auto max-w-6xl px-4 pointer-events-none",
-          "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-          navVisible ? "translate-y-0" : "-translate-y-[calc(100%+24px)]"
-        )}
+        className="fixed top-3 sm:top-4 left-0 right-0 z-50 mx-auto max-w-6xl px-3 sm:px-4 pointer-events-none"
       >
         <div
           className={cn(
-            "pointer-events-auto glass-panel rounded-2xl px-4 py-2.5 flex items-center justify-between",
-            "transition-all duration-300",
+            "pointer-events-auto rounded-2xl px-4 py-2.5 flex items-center justify-between transition-all duration-300 backdrop-blur-xl",
             isScrolled
-              ? "shadow-[0_10px_30px_rgba(0,0,0,0.18)] border-[#7B2DFF]/30"
-              : "border-border"
+              ? "bg-background/80 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]"
+              : "bg-background/40 border border-white/5 shadow-sm"
           )}
         >
           {/* Logo */}

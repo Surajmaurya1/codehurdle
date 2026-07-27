@@ -2,12 +2,11 @@ import { NavItem } from "@/types";
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Why Us", href: "#why-codehurdle" },
-  { label: "Roadmap", href: "#journey" },
   { label: "DSA Topics", href: "#topics" },
-  { label: "Companies", href: "#companies" },
-  { label: "Patterns", href: "#patterns" },
   { label: "Compiler", href: "#practice" },
   { label: "Dashboard", href: "#dashboard" },
+  { label: "Roadmap", href: "#journey" },
+  { label: "Companies", href: "#companies" },
   { label: "Stories", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
