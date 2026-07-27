@@ -261,6 +261,58 @@ npm run start
 * **FID / INP (Interaction to Next Paint)**: $< 50\text{ms}$
 * **CLS (Cumulative Layout Shift)**: `0.00`
 
+## Performance & Quality
+
+### Lighthouse Audit Results
+
+| Metric | Score |
+|--------|------:|
+| 🚀 Performance | 92 |
+| ♿ Accessibility | 95 |
+| ✅ Best Practices | 100 |
+| 🔍 SEO | 100 |
+
+> Tested using Chrome Lighthouse on the deployed production build. Scores may vary slightly depending on device, network conditions, and browser version.
+
+### Lighthouse Report
+
+![Lighthouse Report](./public/lighthouse-score.jpeg)
+
+---
+
+## Performance Optimizations
+
+The application is engineered with a performance-first mindset to guarantee low latency, zero visual jank, and instant page rendering:
+
+- **Optimized Image Loading**: Next-generation image formats (`.webp`, SVG) with strict sizing attributes to eliminate Cumulative Layout Shift (CLS).
+- **Lazy Loading**: Non-critical dynamic components and off-screen assets are lazily loaded to preserve initial load bandwidth.
+- **Route & Component Code Splitting**: Leveraging Next.js App Router boundaries to automatically split JavaScript payloads per route segment.
+- **Reduced JavaScript Bundle Size**: Minimal client dependencies, tree-shaken `lucide-react` icons, and strict Server Component defaults.
+- **Optimized Font Loading**: Modern typography using `next/font` with zero FOIT/FOUT and automated subsetting.
+- **Hardware-Accelerated (60 FPS) Animations**: Framer Motion transitions utilizing `transform` and `opacity` properties to avoid browser paint re-layouts.
+- **Responsive Layouts**: Mobile-first grid and flexbox layouts tailored for seamless execution across all viewport boundaries.
+- **Efficient Rendering**: Controlled React state hooks and isolated client boundaries preventing cascading re-renders across the DOM tree.
+- **Proper Semantic HTML**: Accessible document hierarchy (`header`, `main`, `footer`, `section`, `nav`) for screen readers and search crawlers.
+- **SEO Metadata**: Complete meta tags, OpenGraph cards, standard title hierarchies, and structured data schemas.
+- **Performance-Focused Architecture**: Clean separation between static HTML pre-rendered on the server and dynamic client-side interactions.
+- **No Unnecessary UI Changes**: All optimizations were achieved purely through architectural discipline without altering the intended visual design.
+
+---
+
+## Technical Decisions
+
+The system architecture reflects deliberate technical trade-offs focused on scalability, maintainability, developer experience, and user satisfaction:
+
+* **Next.js App Router**: Chosen for modern Server Components (RSC), automatic route code-splitting, streaming SSR, and zero-bundle server logic.
+* **TypeScript for Type Safety**: Enforces strict compile-time interface contracts across component props, static data schemas, and UI states.
+* **Tailwind CSS for Maintainability**: Utility-first CSS engine enabling rapid UI iterations, unified HSL color tokens, and zero CSS runtime overhead.
+* **Component-Based Architecture**: Strictly modular codebase separating feature domain sections from underlying atomic UI primitives.
+* **Reusable UI Components**: Headless, accessible UI primitives built on top of `shadcn/ui` standards to maintain consistent design tokens.
+* **Responsive-First Development**: Engineered fluid layouts tested across mobile, tablet, and widescreen viewports with mobile-first breakpoints.
+* **Performance-First Approach**: Server-first data flow, minimal JS payloads on the main thread, and instant first contentful paint (FCP).
+* **Accessibility Considerations**: Full WCAG AA color contrast compliance, keyboard focus rings (`focus-visible`), aria roles, and screen-reader support.
+* **SEO Best Practices**: Standard heading structure (`h1`-`h4`), semantic metadata, canonical URLs, and mobile responsiveness.
+
 ---
 
 ## Key Takeaways
@@ -280,4 +332,5 @@ npm run start
 © 2026 [surajmaurya](mailto:surajmaurya.pvt@gmail.com). All rights reserved.
 
 > **Disclaimer**: This repository and codebase are created purely for frontend engineering assessment/assignment purpose demo. Using this code or any part of this project without explicit written permission is strictly prohibited.
+
 
