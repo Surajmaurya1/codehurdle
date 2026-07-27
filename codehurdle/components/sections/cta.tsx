@@ -35,12 +35,17 @@ export function CTA() {
           <div className="max-w-md mx-auto pt-2">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-2">
+                <label htmlFor="cta-email-input" className="sr-only">
+                  Work Email Address
+                </label>
                 <input
+                  id="cta-email-input"
                   type="email"
                   placeholder="Enter your work email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  aria-label="Work Email Address"
                   className="w-full h-11 px-4 rounded-xl border border-border bg-background text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:ring-2 focus:ring-[#7B2DFF]"
                 />
                 <Button

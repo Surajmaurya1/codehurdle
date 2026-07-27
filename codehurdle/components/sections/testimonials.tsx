@@ -52,6 +52,7 @@ export function Testimonials() {
                 alt="Alex Rivera"
                 width={48}
                 height={48}
+                sizes="48px"
                 className="w-12 h-12 rounded-full object-cover border-2 border-[#7B2DFF]"
               />
               <div>
@@ -71,7 +72,7 @@ export function Testimonials() {
               <div className="flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current" />
+                    <Star key={i} className="w-3 h-3 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <Badge variant="easy" className="text-[10px]">Vercel Offer</Badge>
@@ -87,6 +88,7 @@ export function Testimonials() {
                   alt="Sarah Chen"
                   width={36}
                   height={36}
+                  sizes="36px"
                   className="w-9 h-9 rounded-full object-cover border border-border"
                 />
                 <div>
@@ -101,7 +103,7 @@ export function Testimonials() {
               <div className="flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current" />
+                    <Star key={i} className="w-3 h-3 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <Badge variant="purple" className="text-[10px]">Stripe Staff Offer</Badge>
@@ -117,6 +119,7 @@ export function Testimonials() {
                   alt="Marcus Vance"
                   width={36}
                   height={36}
+                  sizes="36px"
                   className="w-9 h-9 rounded-full object-cover border border-border"
                 />
                 <div>

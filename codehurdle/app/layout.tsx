@@ -86,6 +86,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CodeHurdle",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "description":
+      "Master production-grade system architecture, real-time voice AI mock interviews, and company-specific rubrics designed by principal engineers at Stripe, Vercel, and Linear.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+    },
+  };
+
   return (
     <html
       lang="en"
@@ -93,11 +108,18 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
-        {/* Preconnect to external domains for faster resource loading */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
+        {/* Preconnect & DNS prefetch for critical third-party media assets */}
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="font-sans antialiased min-h-screen relative selection:bg-[#7B2DFF] selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="font-sans antialiased min-h-screen relative selection:bg-[#7B2DFF] selection:text-white bg-background text-foreground"
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

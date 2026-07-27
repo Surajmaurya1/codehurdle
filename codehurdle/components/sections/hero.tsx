@@ -214,11 +214,12 @@ export function Hero() {
                   <Image
                     key={i}
                     src={src}
-                    alt={`Student avatar ${i + 1}`}
+                    alt={`CodeHurdle candidate avatar ${i + 1}`}
                     width={36}
                     height={36}
+                    sizes="36px"
+                    priority={i === 0}
                     className="w-9 h-9 rounded-full border-2 border-background object-cover"
-                    loading="lazy"
                   />
                 ))}
               </div>
@@ -227,7 +228,7 @@ export function Hero() {
               <div className="flex flex-col">
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
+                    <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
                   ))}
                   <span className="ml-1 text-xs font-bold text-foreground">4.9/5 Rating</span>
                 </div>
