@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { CodeHurdleLogo } from "@/components/icons/codehurdle-logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -61,10 +61,10 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "pointer-events-auto rounded-2xl px-4 py-2.5 flex items-center justify-between transition-all duration-300 backdrop-blur-2xl",
+            "pointer-events-auto rounded-2xl px-4 py-2.5 flex items-center justify-between transition-all duration-300 backdrop-blur-2xl bg-background/95 border border-white/10",
             isScrolled
-              ? "bg-background/80 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]"
-              : "bg-background/40 border border-white/5 shadow-sm"
+              ? "shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]"
+              : "shadow-sm"
           )}
         >
           {/* Logo */}
@@ -143,7 +143,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed inset-x-4 top-20 z-40 rounded-2xl glass-panel p-6 md:hidden shadow-2xl border-[#7B2DFF]/30"
+            className="fixed inset-x-4 top-20 z-40 rounded-2xl bg-background/95 backdrop-blur-2xl p-6 md:hidden shadow-2xl border border-white/10"
           >
             <nav aria-label="Mobile navigation">
               <div className="flex flex-col gap-4">
@@ -164,11 +164,11 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       buttonVariants({ variant: "primary" }),
-                      "w-full justify-center gap-2"
+                      "w-full justify-center gap-2 font-semibold"
                     )}
                   >
-                    <Sparkles className="w-4 h-4" />
-                    <span>Start Free Trial</span>
+                    <span>Start Practicing</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>

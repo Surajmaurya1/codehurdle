@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Play,
   Star,
   CheckCircle2,
   Terminal as TerminalIcon,
@@ -185,17 +184,6 @@ export function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </MagneticButton>
-
-              <Link
-                href="#overview"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "gap-2 text-base"
-                )}
-              >
-                <Play className="w-4 h-4 fill-current text-[#7B2DFF]" />
-                <span>Watch Demo (2 min)</span>
-              </Link>
             </div>
 
             {/* Trust Badges & Student Rating Cluster */}
@@ -252,7 +240,7 @@ export function Hero() {
                   <ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" />
                   <span>codehurdle.app/sandbox/live</span>
                 </div>
-                <div className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#7B2DFF]/20 text-[#A675FF]">
+                <div className="hidden sm:block text-[10px] font-mono px-2 py-0.5 rounded bg-[#7B2DFF]/20 text-[#A675FF]">
                   LIVE SESSION
                 </div>
               </div>

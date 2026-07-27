@@ -45,18 +45,18 @@ export function ProgressDashboard() {
             <div className="rounded-2xl border border-border bg-background p-6 space-y-6 shadow-xl">
               
               {/* Window Header Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-border">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-border">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#7B2DFF]/10 text-[#7B2DFF] flex items-center justify-center font-bold font-mono border border-[#7B2DFF]/20">
+                  <div className="w-8 h-8 rounded-lg bg-[#7B2DFF]/10 text-[#7B2DFF] flex items-center justify-center font-bold font-mono border border-[#7B2DFF]/20 shrink-0">
                     DB
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-foreground">Candidate Performance Hub</h3>
-                    <span className="text-xs font-mono text-foreground-muted">Live Readiness Metric • 92.8%</span>
+                    <h3 className="text-sm sm:text-base font-bold text-foreground">Candidate Performance Hub</h3>
+                    <span className="text-xs font-mono text-foreground-muted block sm:inline">Live Readiness Metric • 92.8%</span>
                   </div>
                 </div>
 
-                <Badge variant="purple" className="text-xs font-mono">
+                <Badge variant="purple" className="text-xs font-mono self-start sm:self-auto">
                   FAANG Tier-1 Ready
                 </Badge>
               </div>
@@ -70,7 +70,7 @@ export function ProgressDashboard() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-24 gap-1 p-3 rounded-xl bg-surface border border-border/60">
+                <div className="grid grid-cols-12 sm:grid-cols-24 gap-1 p-3 rounded-xl bg-surface border border-border/60 overflow-hidden">
                   {Array.from({ length: 96 }).map((_, i) => {
                     const active = i % 3 !== 0;
                     return (
