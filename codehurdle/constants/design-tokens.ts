@@ -1,0 +1,17 @@
+export const BRAND_TOKENS = {
+  primaryPurple: "#7B2DFF",
+  primaryHover: "#6922E8",
+  darkPurple: "#5416B8",
+  softPurple: "#A675FF",
+  purpleGlow: "rgba(123, 45, 255, 0.20)",
+  backgroundDark: "#09090B",
+  surfaceDark: "#111113",
+  backgroundLight: "#FFFFFF",
+  surfaceLight: "#F8F8FA",
+  borderDark: "rgba(255, 255, 255, 0.08)",
+  borderLight: "rgba(0, 0, 0, 0.08)",
+  mutedText: "#A1A1AA",
+  success: "#22C55E",
+  danger: "#EF4444",
+  warning: "#F59E0B",
+} as const;
