@@ -267,10 +267,10 @@ npm run start
 
 | Metric | Score |
 |--------|------:|
-| 🚀 Performance | 92 |
-| ♿ Accessibility | 95 |
-| ✅ Best Practices | 100 |
-| 🔍 SEO | 100 |
+|  Performance | 92 |
+|  Accessibility | 95 |
+|  Best Practices | 100 |
+|  SEO | 100 |
 
 > Tested using Chrome Lighthouse on the deployed production build. Scores may vary slightly depending on device, network conditions, and browser version.
 
