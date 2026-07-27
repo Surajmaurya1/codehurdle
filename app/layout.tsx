@@ -41,8 +41,13 @@ export const metadata: Metadata = {
     "Vercel Interview Prep",
   ],
   authors: [{ name: "CodeHurdle Engineering Team" }],
+  icons: {
+    icon: "/favcion.png",
+    shortcut: "/favcion.png",
+    apple: "/favcion.png",
+  },
   openGraph: {
-    title: "CodeHurdle — Become the Engineer Companies Want to Hire",
+    title: "CodeHurdle — The #1 Technical Interview Accelerator for Engineers",
     description:
       "Practice. Build. Get Hired. Interactive AI voice mock interviews, algorithmic roadmaps, and recruiter-tested ATS resume diagnostics.",
     url: "https://codehurdle.app",
@@ -60,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CodeHurdle — Become the Engineer Companies Want to Hire",
+    title: "CodeHurdle — The #1 Technical Interview Accelerator for Engineers",
     description:
       "Interactive technical interview preparation built for senior and staff engineers.",
     images: ["https://codehurdle.app/og-image.png"],
