@@ -3,87 +3,103 @@
 import React from "react";
 import Link from "next/link";
 import { CodeHurdleLogo } from "@/components/icons/codehurdle-logo";
-import { NAV_LINKS } from "@/constants/navigation";
+
+const FOOTER_NAV = [
+  {
+    title: "Curriculum",
+    links: [
+      { label: "Data Structures", href: "#topics" },
+      { label: "14 Coding Patterns", href: "#patterns" },
+      { label: "Company Question Kits", href: "#companies" },
+      { label: "System Design Basics", href: "#topics" },
+      { label: "Dynamic Programming", href: "#patterns" },
+    ],
+  },
+  {
+    title: "Platform",
+    links: [
+      { label: "Online Compiler Sandbox", href: "#practice" },
+      { label: "Progress Dashboard", href: "#dashboard" },
+      { label: "Voice AI Mock Interviews", href: "#mock-interviews" },
+      { label: "Real Interview Experiences", href: "#companies" },
+      { label: "Blind 75 & NeetCode 150", href: "#topics" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Why CodeHurdle", href: "#why-codehurdle" },
+      { label: "Student Success Stories", href: "#testimonials" },
+      { label: "Changelog", href: "#overview" },
+      { label: "Careers", href: "#overview" },
+      { label: "Contact Support", href: "#faq" },
+    ],
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="bg-surface border-t border-border pt-16 pb-12 relative text-xs">
+    <footer className="border-t border-border bg-background py-16 text-xs text-foreground-muted">
       <div className="max-w-6xl mx-auto px-4 space-y-12">
         
-        {/* Top Footer Grid */}
+        {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           
-          {/* Brand Info */}
-          <div className="md:col-span-5 space-y-4">
-            <CodeHurdleLogo className="h-7" />
-            <p className="text-foreground-muted leading-relaxed max-w-sm">
-              The premier technical interview acceleration platform built for senior &amp; staff software engineers targeting top product companies.
+          {/* Logo & Tagline */}
+          <div className="md:col-span-4 space-y-4">
+            <Link href="/" className="inline-block">
+              <CodeHurdleLogo className="h-7" />
+            </Link>
+
+            <p className="text-xs text-foreground-muted max-w-sm leading-relaxed">
+              The best place to learn Data Structures, Algorithms, most asked coding interview questions, and real interview experiences.
             </p>
-            
-            {/* System Status Ping */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/10 border border-[#22C55E]/30 text-[11px] font-mono text-[#22C55E]">
-              <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-ping" />
-              <span>● All Systems Operational (v1.0-beta)</span>
+
+            <div className="flex items-center gap-2 font-mono text-[11px] text-[#22C55E]">
+              <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
+              <span>All Systems Operational (v1.0-BETA)</span>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="md:col-span-3 space-y-3">
-            <div className="font-mono font-bold text-foreground uppercase tracking-wider text-[11px]">
-              Platform Navigation
-            </div>
-            <ul className="space-y-2 text-foreground-muted">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-[#7B2DFF] transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources & Socials */}
-          <div className="md:col-span-4 space-y-3">
-            <div className="font-mono font-bold text-foreground uppercase tracking-wider text-[11px]">
-              Engineering Resources
-            </div>
-            <ul className="space-y-2 text-foreground-muted">
-              <li>
-                <a href="#why-codehurdle" className="hover:text-[#7B2DFF] transition-colors">
-                  Staff Frontend Architecture Guide 2026
-                </a>
-              </li>
-              <li>
-                <a href="#terminal" className="hover:text-[#7B2DFF] transition-colors">
-                  Real-Time Voice AI Interview Simulator
-                </a>
-              </li>
-              <li>
-                <a href="#why-codehurdle" className="hover:text-[#7B2DFF] transition-colors">
-                  ATS Resume Metric Optimizing Rubric
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="hover:text-[#7B2DFF] transition-colors">
-                  FAANG Compensation &amp; Offer Playbook
-                </a>
-              </li>
-            </ul>
+          {/* Nav Columns */}
+          <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {FOOTER_NAV.map((col, idx) => (
+              <div key={idx} className="space-y-3">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
+                  {col.title}
+                </h4>
+                <ul className="space-y-2">
+                  {col.links.map((link, lIdx) => (
+                    <li key={lIdx}>
+                      <Link
+                        href={link.href}
+                        className="hover:text-foreground transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
         </div>
 
-        {/* Bottom Legal Hairline Strip */}
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between text-foreground-muted gap-4">
-          <div>
-            © {new Date().getFullYear()} CodeHurdle Inc. All rights reserved. Handcrafted for senior engineers.
-          </div>
-
-          <div className="flex items-center gap-6 font-mono text-[11px]">
-            <a href="#overview" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#overview" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#overview" className="hover:text-foreground transition-colors">Security Audit</a>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px]">
+          <span>© {new Date().getFullYear()} CodeHurdle Inc. All rights reserved.</span>
+          
+          <div className="flex items-center gap-6">
+            <Link href="#faq" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="#faq" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="#faq" className="hover:text-foreground transition-colors">
+              Security
+            </Link>
           </div>
         </div>
 
