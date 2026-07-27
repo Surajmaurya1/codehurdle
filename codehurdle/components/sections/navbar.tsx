@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { CodeHurdleLogo } from "@/components/icons/codehurdle-logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -17,14 +17,6 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
-
-  // Framer Motion smooth scroll progress bar
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 40,
-    restDelta: 0.001,
-  });
 
   // Smooth, jitter-free scroll hide/show — uses rAF + hysteresis
   useEffect(() => {
@@ -91,12 +83,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Hardware-Accelerated Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#7B2DFF] via-[#A675FF] to-[#7B2DFF] origin-left z-50 shadow-[0_0_10px_#7B2DFF]"
-        style={{ scaleX }}
-      />
-
       {/* Floating Glass Header — CSS transition for buttery-smooth hide/show */}
       <header
         className={cn(
