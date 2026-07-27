@@ -272,3 +272,12 @@ npm run start
 * **Maintainability & Scalability**: Modular atomic structure allows rapid addition of new landing pages, dashboard widgets, and feature sections.
 
 > **Engineering Note**: This project was intentionally designed and architected as a **production-ready SaaS landing page** rather than a static visual submission. Every component, style token, and interaction was crafted to reflect the engineering standards, performance awareness, and product maturity expected of a Staff Frontend Engineer building scalable web applications.
+
+---
+
+## License & Copyright
+
+© 2026 [surajmaurya](mailto:surajmaurya.pvt@gmail.com). All rights reserved.
+
+> **Disclaimer**: This repository and codebase are created purely for frontend engineering assessment/assignment purpose demo. Using this code or any part of this project without explicit written permission is strictly prohibited.
+

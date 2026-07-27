@@ -54,11 +54,6 @@ export function Footer() {
             <p className="text-xs text-foreground-muted max-w-sm leading-relaxed">
               The best place to learn Data Structures, Algorithms, most asked coding interview questions, and real interview experiences.
             </p>
-
-            <div className="flex items-center gap-2 font-mono text-[11px] text-[#22C55E]">
-              <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-              <span>All Systems Operational (v1.0-BETA)</span>
-            </div>
           </div>
 
           {/* Nav Columns */}
@@ -88,7 +83,21 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px]">
-          <span>© {new Date().getFullYear()} CodeHurdle Inc. All rights reserved.</span>
+          <div className="flex flex-col gap-1">
+            <span>
+              © {new Date().getFullYear()}{" "}
+              <a 
+                href="mailto:surajmaurya.pvt@gmail.com" 
+                className="hover:text-foreground transition-colors underline decoration-dotted underline-offset-4"
+              >
+                surajmaurya
+              </a>
+              . All rights reserved.
+            </span>
+            <span className="text-[10px] text-foreground-muted/70 font-sans">
+              This is purely for assignment purpose demo. Using code without permission is not allowed.
+            </span>
+          </div>
           
           <div className="flex items-center gap-6">
             <Link href="#faq" className="hover:text-foreground transition-colors">
