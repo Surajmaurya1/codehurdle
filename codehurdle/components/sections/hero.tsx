@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   Play,
   Star,
   CheckCircle2,
@@ -134,8 +133,12 @@ export function Hero() {
           <div className="mt-4 flex items-center justify-between text-xs font-mono text-[#A1A1AA] border-t border-white/10 pt-3">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-white font-semibold">CODEHURDLE ENGINE v1.0-BETA</span>
-              <span className="hidden sm:inline text-white/40">| REAL-TIME INTERVIEW SIMULATION</span>
+              <span className="text-white font-semibold tracking-wider uppercase">CODEHURDLE
+
+
+                
+              </span>
+              <span className="hidden sm:inline text-[#A675FF]/70">| LIVE DSA & SYSTEM DESIGN ENGINE</span>
             </div>
             <div className="flex items-center gap-1 text-[#A675FF] animate-bounce">
               <span>scroll for details</span>
@@ -150,12 +153,6 @@ export function Hero() {
           
           {/* Left Column: Headline & Editorial Copy */}
           <div className="lg:col-span-6 flex flex-col items-start space-y-6">
-            
-            {/* Announcement Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7B2DFF]/30 bg-[#7B2DFF]/10 backdrop-blur-md text-xs font-medium text-[#A675FF]">
-              <Sparkles className="w-3.5 h-3.5 text-[#7B2DFF] animate-spin-slow" />
-              <span>The #1 Technical Interview Accelerator for Engineers</span>
-            </div>
 
             {/* Editorial Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground font-sans">
