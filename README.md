@@ -11,7 +11,7 @@ A modern, high-performance, accessibility-focused landing page for **CodeHurdle*
 
 ## Live Demo
 
-- **Deployment Link**: [https://codehurdle.vercel.app](https://codehurdle.vercel.app) *(Update with your production deployment URL)*
+- **Deployment Link**: [https://codehurdle.vercel.app](https://codehurdle-ten.vercel.app/)
 - **GitHub Repository**: [https://github.com/Surajmaurya1/codehurdle](https://github.com/Surajmaurya1/codehurdle)
 
 ---
